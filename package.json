@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/cobachie/typescript-toy-tree/issues"
   },
-  "homepage": "https://github.com/cobachie/typescript-toy-tree#readme"
+  "homepage": "https://github.com/cobachie/typescript-toy-tree#readme",
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
 }
