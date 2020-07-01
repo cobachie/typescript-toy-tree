@@ -28,5 +28,8 @@
   },
   "bin": {
     "toy-tree": "src/bin.js"
+  },
+  "jest": {
+    "setupFiles": ["./jest.setup.js"]
   }
 }
