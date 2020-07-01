@@ -1,6 +1,4 @@
-const {
-  format
-} = require('../format');
+import { format } from '../format';
 
 describe('format', () => {
   test('only root', () => {
@@ -8,7 +6,7 @@ describe('format', () => {
       format({
         type: 'directory',
         name: 'root',
-        children: []
+        children: [],
       })
     ).toMatchSnapshot();
   });
@@ -18,7 +16,8 @@ describe('format', () => {
       format({
         type: 'directory',
         name: 'root',
-        children: [{
+        children: [
+          {
             type: 'file',
             name: 'file1.txt',
           },
@@ -29,20 +28,24 @@ describe('format', () => {
           {
             type: 'directory',
             name: 'dir1',
-            children: [{
-              type: 'file',
-              name: 'deep1.txt',
-            }, ],
+            children: [
+              {
+                type: 'file',
+                name: 'deep1.txt',
+              },
+            ],
           },
           {
             type: 'directory',
             name: 'dir2',
-            children: [{
-              type: 'file',
-              name: 'deep1.txt',
-            }, ],
+            children: [
+              {
+                type: 'file',
+                name: 'deep1.txt',
+              },
+            ],
           },
-        ]
+        ],
       })
     ).toMatchSnapshot();
   });
