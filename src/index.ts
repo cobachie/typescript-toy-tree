@@ -1,7 +1,7 @@
-import meow from 'meow';
-import { read } from './read';
-import { format } from './format';
-import { DirectoryNode, Options } from './types';
+import meow from "meow";
+import { read } from "./read";
+import { format } from "./format";
+import { DirectoryNode, Options } from "./types";
 
 type Writer = (...args: any[]) => void;
 
@@ -18,8 +18,8 @@ export const main = (argv: string[], stdout: Writer, stderr: Writer) => {
     {
       flags: {
         level: {
-          type: 'number',
-          alias: 'L',
+          type: "number",
+          alias: "L",
           default: Infinity,
         },
       },
@@ -36,7 +36,7 @@ export const main = (argv: string[], stdout: Writer, stderr: Writer) => {
     return 1;
   }
 
-  const dir = cli.input[0] || '.';
+  const dir = cli.input[0] || ".";
 
   let root: DirectoryNode;
   try {

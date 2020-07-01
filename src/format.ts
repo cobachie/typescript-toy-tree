@@ -1,32 +1,32 @@
-import chalk from 'chalk';
-import { TreeNode, DirectoryNode } from './types';
+import chalk from "chalk";
+import { TreeNode, DirectoryNode } from "./types";
 
 export const format = (node: DirectoryNode) => {
-  return `${node.name}\n${formatEach(node.children, '')}`;
+  return `${node.name}\n${formatEach(node.children, "")}`;
 };
 
 const displayName = (node: TreeNode) => {
   switch (node.type) {
-    case 'file':
+    case "file":
       return node.name;
-    case 'directory':
+    case "directory":
       return chalk.cyan(node.name);
-    case 'symlink':
+    case "symlink":
       return `${chalk.green(node.name)} -> ${chalk.cyan(node.link)}`;
   }
 };
 
 const formatEach = (nodes: TreeNode[], prefix: string) => {
-  let result = '';
+  let result = "";
 
   nodes.forEach((node, index) => {
     const edge = index === nodes.length - 1;
-    const guide = prefix + (edge ? '`--' : '|--');
-    const next = prefix + (edge ? '   ' : '|  ');
+    const guide = prefix + (edge ? "`--" : "|--");
+    const next = prefix + (edge ? "   " : "|  ");
 
     result += `${guide} ${displayName(node)}\n`;
 
-    if (node.type === 'directory') {
+    if (node.type === "directory") {
       result += formatEach(node.children, next);
     }
   });

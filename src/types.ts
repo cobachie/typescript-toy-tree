@@ -7,14 +7,14 @@ interface BaseNode<T> {
 }
 
 // ファイルはtypeとnameのみを持つ
-export interface FileNode extends BaseNode<'file'> {}
+export interface FileNode extends BaseNode<"file"> {}
 
 // ディレクトリは追加でノードの配列を持つ
-export interface DirectoryNode extends BaseNode<'directory'> {
+export interface DirectoryNode extends BaseNode<"directory"> {
   children: TreeNode[];
 }
 
-export interface SymlinkNode extends BaseNode<'symlink'> {
+export interface SymlinkNode extends BaseNode<"symlink"> {
   link: string;
 }
 
