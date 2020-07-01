@@ -34,6 +34,10 @@
     "toy-tree": "dist/bin.js"
   },
   "jest": {
+    "preset": "ts-jest",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist"
+    ],
     "setupFiles": [
       "./jest.setup.js"
     ]
