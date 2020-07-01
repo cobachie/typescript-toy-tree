@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/cobachie/typescript-toy-tree#readme",
   "devDependencies": {
+    "@types/node": "^14.0.14",
     "jest": "^26.1.0",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.5"
