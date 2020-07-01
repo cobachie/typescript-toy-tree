@@ -1,8 +1,11 @@
 import meow from 'meow';
 import { read } from './read';
 import { format } from './format';
+import { DirectoryNode, Options } from './types';
 
-export const main = (argv, stdout, stderr) => {
+type Writer = (...args: any[]) => void;
+
+export const main = (argv: string[], stdout: Writer, stderr: Writer) => {
   const cli = meow(
     `
     Usage
@@ -24,7 +27,7 @@ export const main = (argv, stdout, stderr) => {
     }
   );
 
-  const options = {
+  const options: Options = {
     level: cli.flags.level,
   };
 
@@ -35,7 +38,7 @@ export const main = (argv, stdout, stderr) => {
 
   const dir = cli.input[0] || '.';
 
-  let root;
+  let root: DirectoryNode;
   try {
     root = read(dir, options);
   } catch (e) {
