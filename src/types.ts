@@ -14,8 +14,12 @@ export interface DirectoryNode extends BaseNode<'directory'> {
   children: TreeNode[];
 }
 
+export interface SymlinkNode extends BaseNode<'symlink'> {
+  link: string;
+}
+
 // toy-tree で扱う全ノードのいずれかを表すunion型
-export type TreeNode = FileNode | DirectoryNode;
+export type TreeNode = FileNode | DirectoryNode | SymlinkNode;
 
 export interface Options {
   level: number;
