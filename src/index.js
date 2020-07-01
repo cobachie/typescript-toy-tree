@@ -38,7 +38,7 @@ exports.main = (argv, stdout, stderr) => {
 
   let root;
   try {
-    root = read(dir);
+    root = read(dir, options);
   } catch (e) {
     stderr(`Error: ${e.message}`);
     return 1;
