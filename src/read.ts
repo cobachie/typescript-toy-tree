@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { TODO_any } from './types';
 
 export const read = (dir, options) => {
   let stat;
@@ -34,7 +35,7 @@ const readDirectory = (dir, depth, options) => {
     withFileTypes: true,
   });
 
-  const nodes = [];
+  const nodes: TODO_any[] = [];
 
   dirents.forEach((dirent) => {
     if (dirent.name.startsWith('.')) {
