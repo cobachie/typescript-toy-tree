@@ -4,7 +4,7 @@ exports.format = (node) => {
   return `${node.name}\n${formatEach(node.children, '')}`;
 };
 
-const displayName = (node) {
+const displayName = (node) => {
   switch (node.type) {
     case 'file':
       return node.name;
