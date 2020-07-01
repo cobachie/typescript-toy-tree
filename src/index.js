@@ -14,6 +14,13 @@ exports.main = (argv, stdout, stderr) => {
       $ toy-tree path/to/dir
 `,
     {
+      flags: {
+        level: {
+          type: 'number',
+          alias: 'L',
+          default: Infinity,
+        },
+      },
       argv,
     }
   );
