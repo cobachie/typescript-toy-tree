@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-exports.read = (dir, options) => {
+export const read = (dir, options) => {
   let stat;
 
   try {
