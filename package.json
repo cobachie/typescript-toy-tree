@@ -29,7 +29,7 @@
     "meow": "^7.0.1"
   },
   "bin": {
-    "toy-tree": "src/bin.js"
+    "toy-tree": "dist/bin.js"
   },
   "jest": {
     "setupFiles": [
