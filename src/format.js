@@ -1,5 +1,16 @@
+const chalk = require('chalk');
+
 exports.format = (node) => {
   return `${node.name}\n${formatEach(node.children, '')}`;
+};
+
+const displayName = (node) {
+  switch (node.type) {
+    case 'file':
+      return node.name;
+    case 'directory':
+      return chalk.cyan(node.name);
+  }
 };
 
 const formatEach = (nodes, prefix) => {
@@ -18,4 +29,4 @@ const formatEach = (nodes, prefix) => {
   });
 
   return result;
-}
+};
