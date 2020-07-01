@@ -1,7 +1,7 @@
 const meow = require('meow');
 
 exports.main = (argv, stdout, stderr) => {
-  const cli = meaw(
+  const cli = meow(
     `
     Usage
       $ toy-tree <directory>
@@ -9,8 +9,9 @@ exports.main = (argv, stdout, stderr) => {
     Example
       $ toy-tree
       $ toy-tree path/to/dir
-`, {
-      argv
+`,
+    {
+      argv,
     }
   );
 
@@ -19,4 +20,4 @@ exports.main = (argv, stdout, stderr) => {
   stdout(dir);
 
   return 0;
-}
+};
